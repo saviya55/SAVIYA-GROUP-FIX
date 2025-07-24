@@ -1,6 +1,6 @@
 {
-  "name": "baileys-elite",
-  "version": "0.0.9-beta.1",
+  "name": "baileys-pro",
+  "version": "0.0.5",
   "description": "WhatsApp API",
   "keywords": [
     "whatsapp",
@@ -10,23 +10,21 @@
     "whatsapp-chat",
     "whatsapp-group",
     "automation",
-    "baileys-elite",
     "multi-device"
   ],
-  "homepage": "https://github.com/shizo-devs/baileys",
+  "homepage": "https://github.com/FizzxyTheGreat/baileyss",
   "repository": {
-    "url": "https://github.com/shizo-devs/baileys.git"
+    "url": "git@github.com:zervidas/baileys-pro.git"
   },
   "license": "MIT",
-  "author": "Yugesh Singh",
-  "creator": "Adhiraj Singh",
+  "author": "Adhiraj Singh",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib/*",
-    "WAProto/*",
-    "WASignalGroup/*.js",
-    "engine-requirements.js"
+    "WAProto/*.ts",
+    "WAProto/*.js",
+    "WASignalGroup/*.js"
   ],
   "scripts": {
     "build:all": "tsc && typedoc",
@@ -36,10 +34,9 @@
     "changelog:preview": "conventional-changelog -p angular -u",
     "changelog:update": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "example": "node --inspect -r ts-node/register Example/example.ts",
-    "example:mobile": "node --inspect -r ts-node/register Example/example.ts --mobile",
     "gen:protobuf": "sh WAProto/GenerateStatics.sh",
-    "lint": "eslint src --ext .js,.ts,.jsx,.tsx",
-    "lint:fix": "eslint src --fix --ext .js,.ts,.jsx,.tsx",
+    "lint": "eslint src --ext .js,.ts",
+    "lint:fix": "yarn lint --fix",
     "prepack": "tsc",
     "prepare": "tsc",
     "release": "release-it",
@@ -48,24 +45,19 @@
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@hapi/boom": "^9.1.3",
-    "async-mutex": "^0.5.0",
     "async-lock": "^1.4.1",
-    "futoin-hkdf": "^1.5.1",
     "audio-decode": "^2.1.3",
     "axios": "^1.6.0",
-    "cache-manager": "^5.7.6",
-    "libphonenumber-js": "^1.10.20",
-    "libsignal": "git+https://github.com/AmilaPrabathKumara/libsignal-node.git",
-    "lodash": "^4.17.21",
+    "cache-manager": "^6.4.2",
+    "libsignal": "github:WhiskeySockets/libsignal-node",
     "music-metadata": "^7.12.3",
-    "@cacheable/node-cache": "1.5.8",
+    "node-cache": "^5.1.2",
     "pino": "^9.6",
-    "protobufjs": "^6.11.3",
+    "protobufjs": "^7.2.4",
     "uuid": "^10.0.0",
     "ws": "^8.13.0"
   },
   "devDependencies": {
-    "@adiwajshing/eslint-config": "https://github.com/adiwajshing/eslint-config.git",
     "@types/got": "^9.6.11",
     "@types/jest": "^27.5.1",
     "@types/node": "^16.0.0",
@@ -106,8 +98,5 @@
       "optional": true
     }
   },
-  "packageManager": "yarn@1.22.19",
-   "engines": {
-     "node": ">=20.0.0"
-   }
+  "packageManager": "yarn@1.22.19"
 }
